@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #2563eb;
+}
+.loadingSpinnerStyles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+body {
+  background-color: white !important;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  scroll-behavior: smooth;
+  background: #f1faf9c6;
+}
+
+/* landing page button animation */
+
+.button {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #2563eb;
+  padding: 0.5em 1.2em !important;
+  font-size: 1em !important;
+  font-weight: 400;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 100px;
+}
+.button span {
+  position: relative;
+  pointer-events: none;
+  background-color: transparent !important;
+}
+
+.button::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, #4405f7, transparent);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+.button:hover::before {
+  --size: 400px;
+}
+
+/* navlink animation */
+
+.nav-link-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 30px 0;
+  line-height: 24px;
+  text-align: center;
+  font-weight: normal;
+}
+.nav-link-child {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  line-height: 24px;
+}
+.nav-link-child:before,
+.nav-link-child:after {
+  content: "";
+  position: absolute;
+  transition: transform 0.5s ease;
+}
+
+.nav-link-child {
+  padding-top: 10px;
+}
+.nav-link-child:hover {
+  color: #2563eb;
+}
+.nav-link-child:before {
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #2563eb;
+  transform: scaleX(0);
+}
+.nav-link-child:hover:before {
+  transform: scaleX(1);
+}
+
+/* FAQ */
+.ant-collapse-header-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #212b36;
+}
+.ant-collapse-expand-icon {
+  background-color: #f5f6fd;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+.ant-collapse-content-box {
+  /* margin-left: 50px; */
+  color: #637381;
+  font-size: 18px;
+  font-weight: 400;
+}
+.contact-form input,
+textarea {
+  border-inline-end-width: 0px !important;
+}
+.contact-form input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  box-shadow: none !important;
+}
+.contact-form button:hover {
+  color: white !important;
+}
+.contact-form label {
+  font-weight: 600;
+  color: #637381 !important;
+  font-size: 14px !important;
+}
+.contact-form .ant-form-item-label {
+  padding-bottom: 0px !important;
+}
+
+/* Pc screemns */
+@media (min-width: 1280px) {
+  .ant-collapse-content-box {
+    margin-left: 50px;
+  }
+}
+/* laptop responsive */
+@media (min-width: 1027px) {
+  .ant-collapse-content-box {
+    padding-block: 0px !important;
+  }
+}
+
+@media (min-width: 1027px) {
+  /* .button {
+  } */
+}
+@media (min-width: 650px) {
+  .button {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1.2em;
+    padding: 0.6em 1.3em !important;
+  }
+}
+.custom-gradient {
+  /* background: linear-gradient(to left, #0b1856 -40%, #030717 100%); */
+  /* background: rgb(35,76,166);
+background: linear-gradient(90deg, rgba(35,76,166,1) 0%, rgba(1,77,244,1) 34%, rgba(62,120,247,1) 82%);
+ */
+
+ background: linear-gradient(90deg, rgba(17,49,119,1) 0%, rgba(1,77,244,1) 61%, rgba(62,120,247,1) 82%);
+}
+.custom-shadow {
+  box-shadow: 0px -3px 19px 2px #0000002b;
+}
